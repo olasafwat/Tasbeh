@@ -37,6 +37,7 @@ dependencies:
   animated_splash_screen: ^1.2.0
   flutter_point_tab_bar: ^0.2.0
   http: ^0.13.0
+  google_fonts: ^2.3.2
 
 
 dev_dependencies:

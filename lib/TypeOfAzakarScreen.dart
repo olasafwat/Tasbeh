@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-class TypeOfAzakarScreen extends StatefulWidget {
-  const TypeOfAzakarScreen({Key? key}) : super(key: key);
+class TypeOfAzakarScreen
+{
+  List listofazkar =["أذكار الصباح","أذكار المساء","أذكار دخول المنزل","أذكار خروج من المنزل"];
 
-  @override
-  State<TypeOfAzakarScreen> createState() => _TypeOfAzakarScreenState();
-}
-
-class _TypeOfAzakarScreenState extends State<TypeOfAzakarScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  List azkarsbah =["أستغفر الله","الله اكبر","يا حي يا قيوم برحمتك أستغيث أصلح لي شأني كله ولا تكلني إلى نفسي طـرفة عين","سبحان الله"];
 }
