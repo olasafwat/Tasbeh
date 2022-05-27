@@ -44,27 +44,27 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-         constraints: BoxConstraints.expand(),
-        decoration:  BoxDecoration(
-            image:DecorationImage(
+          constraints: BoxConstraints.expand(),
+          decoration:  BoxDecoration(
+              image:DecorationImage(
 
-              image: AssetImage("assests/images/adanbackground2.jpg"),
-              fit: BoxFit.cover,
-            ) ),
-       child: FutureBuilder(
-      future: getTimes(),
-      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        return (snapshot.hasData)
-            ? Column(
+                image: AssetImage("assests/images/adanbackground2.jpg"),
+                fit: BoxFit.cover,
+              ) ),
+          child: FutureBuilder(
+            future: getTimes(),
+            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+              return (snapshot.hasData)
+                  ? Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 //mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                  children: [
 
                     Padding(
                       padding: const EdgeInsets.only(bottom: 15.0,),
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.center,
-                       // crossAxisAlignment: CrossAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(onPressed: ()
                           {
@@ -77,18 +77,18 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
                                     color: colorFontAllApp,
                                     size: 30),
                               )),
-                         Padding(
-                           padding: const EdgeInsets.only(left: 80.0,top: 50),
-                           child: Text(
-                             "${snapshot.data["data"]["date"]["readable"]}",
-                                style: GoogleFonts.amiri(
-                                  textStyle: TextStyle(
-                                      color: colorFontAllApp,
-                                      fontSize: fontTitle,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 80.0,top: 50),
+                            child: Text(
+                              "${snapshot.data["data"]["date"]["readable"]}",
+                              style: GoogleFonts.amiri(
+                                textStyle: TextStyle(
+                                    color: colorFontAllApp,
+                                    fontSize: fontTitle,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
+                          ),
 /*                          Padding(
                               padding:
                                   const EdgeInsets.only(top: 30.0, right: 60),
@@ -148,7 +148,7 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
                         ],
                       ),
                     ),
-                 /* Center(
+                    /* Center(
                     child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -169,110 +169,110 @@ crossAxisAlignment: CrossAxisAlignment.start,
                       ],
                     ),
                   ),*/
-                  RichText(
-                    text: TextSpan(
-                      text: '${snapshot.data["data"]["timings"]["Fajr"]}',
-                      style: GoogleFonts.amiri(
-                              textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp,wordSpacing: 100)),
+                    RichText(
+                      text: TextSpan(
+                        text: '${snapshot.data["data"]["timings"]["Fajr"]}',
+                        style: GoogleFonts.amiri(
+                            textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp,wordSpacing: 100)),
 
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 57)),
-                        TextSpan(
-                          text: 'الفجر',
-                          style: GoogleFonts.amiri(
-                              textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 57)),
+                          TextSpan(
+                            text: 'الفجر',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: '${snapshot.data["data"]["timings"]["Sunrise"]}',
-                      style: GoogleFonts.amiri(
-                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 2)),
-                        TextSpan(
-                          text: '       الشروق',
-                          style: GoogleFonts.amiri(
+                    RichText(
+                      text: TextSpan(
+                        text: '${snapshot.data["data"]["timings"]["Sunrise"]}',
+                        style: GoogleFonts.amiri(
                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 2)),
+                          TextSpan(
+                            text: '       الشروق',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: '${snapshot.data["data"]["timings"]["Dhuhr"]}',
-                      style: GoogleFonts.amiri(
-                              textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 45)),
-                        TextSpan(
-                          text: ' الضهر ',
-                          style: GoogleFonts.amiri(
+                    RichText(
+                      text: TextSpan(
+                        text: '${snapshot.data["data"]["timings"]["Dhuhr"]}',
+                        style: GoogleFonts.amiri(
                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 45)),
+                          TextSpan(
+                            text: ' الضهر ',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: '  ${snapshot.data["data"]["timings"]["Asr"]} ',
-                      style: GoogleFonts.amiri(
-                              textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 40)),
-                        TextSpan(
-                          text: 'العصر',
-                          style: GoogleFonts.amiri(
+                    RichText(
+                      text: TextSpan(
+                        text: '  ${snapshot.data["data"]["timings"]["Asr"]} ',
+                        style: GoogleFonts.amiri(
                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 40)),
+                          TextSpan(
+                            text: 'العصر',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: '${snapshot.data["data"]["timings"]["Maghrib"]}',
-                      style: GoogleFonts.amiri(
-                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 40)),
-                        TextSpan(
-                          text: 'المغرب',
-                          style: GoogleFonts.amiri(
+                    RichText(
+                      text: TextSpan(
+                        text: '${snapshot.data["data"]["timings"]["Maghrib"]}',
+                        style: GoogleFonts.amiri(
                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 40)),
+                          TextSpan(
+                            text: 'المغرب',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: '${snapshot.data["data"]["timings"]["Isha"]}',
-                      style: GoogleFonts.amiri(
-                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                      children: [
-                        WidgetSpan(
-                            baseline: TextBaseline.alphabetic,
-                            child: SizedBox(width: 50)),
-                        TextSpan(
-                          text: 'العشاء',
-                          style: GoogleFonts.amiri(
+                    RichText(
+                      text: TextSpan(
+                        text: '${snapshot.data["data"]["timings"]["Isha"]}',
+                        style: GoogleFonts.amiri(
                             textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
-                        ),
-                      ],
+                        children: [
+                          WidgetSpan(
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 50)),
+                          TextSpan(
+                            text: 'العشاء',
+                            style: GoogleFonts.amiri(
+                                textStyle:TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-     /*             Text(
+                    /*             Text(
                       "${snapshot.data["data"]["timings"]["Fajr"]}",
                       style: TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
                   Text("الفجر",
@@ -305,12 +305,12 @@ crossAxisAlignment: CrossAxisAlignment.start,
                   ),
 */
                   ])
-            : Center(child: CircularProgressIndicator(color: colorFontAllApp,));
-      },
-    ),
+                  : Center(child: CircularProgressIndicator(color: colorFontAllApp,));
+            },
+          ),
 
 
-)
+        )
     );
 
 

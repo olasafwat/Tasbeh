@@ -4,10 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sabha/ItemCard.dart';
 import 'package:http/http.dart' as http;
+import 'AzkarModel.dart';
 import 'constract.dart';
 
 class AzkarScreen extends StatefulWidget
 {
+  String azkar;
+
+  AzkarScreen(this.azkar);
 
   @override
   State<AzkarScreen> createState() => _AzkarScreenState();
@@ -15,27 +19,45 @@ class AzkarScreen extends StatefulWidget
 
 class _AzkarScreenState extends State<AzkarScreen>
 {
-  int count = 5;
 
+
+  // int count = 5;
+/*zekrString  String zekr;
+  int repeat;
+
+
+  _AzkarScreenState(this.zekr, this.repeat);*/
 
   var responsebody;
   getAzkarSabah() async
   {
-    var url = Uri.parse(
-        "https://ahegazy.github.io/muslimKit/json/azkar_sabah.json");
+    List <AzkarModel> listAzkarSabah=[];
+    /*if ({widget.azkar} == 'azkar_5rog')
+      {
+        var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
+
+      }else{
+      var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
+
+    }*/
+    var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
 
     // response -> hygeb al data mn al net
     var response = await http.get(url);
 
-    setState(()
-    {
-      responsebody = jsonDecode(response.body);
-      // responsebody = jsonDecode(response.body)["date"]["readable"];
-    });
+
+    responsebody = jsonDecode(response.body)["content"];
+    // responsebody = jsonDecode(response.body)["date"]["readable"];
+    for(var i in responsebody){
+      listAzkarSabah.add(AzkarModel(repeat:i["repeat"],zekr:i["zekr"] ));
+    }
     //print(response.statusCode);
     //print(responsebody);
 
-    return responsebody;
+
+
+    return listAzkarSabah;
+
   }
 
   @override
@@ -78,21 +100,23 @@ class _AzkarScreenState extends State<AzkarScreen>
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return (snapshot.hasData)
               ? Container(
-                  margin: EdgeInsets.all(20.0),
-                  child: ListView(
-                    children: [
-                      ItemCard("${snapshot.data["content"][1]["zekr"]}", 5),
-                      ItemCard("أستغفر الله", 55),
-                      ItemCard("الله اكبر", 4),
-                      ItemCard(
-                          "يا حي يا قيوم برحمتك أستغيث أصلح لي شأني كله ولا تكلني إلى نفسي طـرفة عين.",
-                          5),
-                      ItemCard(
-                          "بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.",
-                          5),
-                    ],
-                  ),
-                )
+            margin: EdgeInsets.all(20.0),
+            child: ListView.builder(itemBuilder: (BuildContext context, int index) {
+
+              return Stack(
+                children: [
+                  ItemCard("${snapshot.data[index].zekr}", snapshot.data[index].repeat),
+                  //ItemCard("${snapshot.data[2]["zekr"]}", snapshot.data[2]["repeat"])
+                ],
+
+              );
+            },
+
+
+
+
+            ),
+          )
               : Center(child: CircularProgressIndicator(color: colorFontAllApp));
         },
 

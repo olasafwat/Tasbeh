@@ -57,10 +57,10 @@ class _ItemCardState extends State<ItemCard> {
                             },
                             child: Text(
                               "${widget.Count}",
-                              style: TextStyle(color: colorFontAllApp),
+                              style: TextStyle(color: colorFontAllApp,fontSize: 18),
                             ),
                             color:
-                                (widget.Count == 0) ? colorAccpet : colorReject,
+                            (widget.Count == 0) ? colorAccpet : colorReject,
                             height: 54,
                             //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
                             minWidth: double.infinity)

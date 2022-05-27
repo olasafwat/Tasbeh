@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
       body:
-          /*Container(
+      /*Container(
          constraints: BoxConstraints.expand(),
         decoration:  BoxDecoration(
             image:DecorationImage(
@@ -39,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
               fit: BoxFit.fill,
             ) ),
        child:*/
-          Center(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             height: 150, width: 300, //color: Colors.yellow,
             //padding: EdgeInsets.only(top: 20.0,right: 120),
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text("سبحان الله",
                         style:
-                            TextStyle(fontSize: 25, color: Color(0xff607d8b))),
+                        TextStyle(fontSize: 25, color: Color(0xff607d8b))),
                   ),
                 ),
               ),
