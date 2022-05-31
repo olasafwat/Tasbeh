@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.amiriTextTheme(),
-        primarySwatch: Colors.red,
+        //primarySwatch: Colors.red,
       ),
       home: AnimatedSplashScreen(
         duration: 3000,

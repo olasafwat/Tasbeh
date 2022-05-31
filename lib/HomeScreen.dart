@@ -41,27 +41,27 @@ class _HomeScreenState extends State<HomeScreen> {
        child:*/
       Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-            height: 150, width: 300, //color: Colors.yellow,
-            //padding: EdgeInsets.only(top: 20.0,right: 120),
-            //margin: EdgeInsets.only(top: 150.0,right: 70.0),
-            //margin: EdgeInsets.only(bottom: 40.0),
-            child: GestureDetector(
-              onTap: () {
-                IncreseCount();
-              },
-              child: Ink.image(
-                image: AssetImage("assests/images/home-pattern1.png"),
-                fit: BoxFit.cover,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text("سبحان الله",
-                        style:
-                        TextStyle(fontSize: 25, color: Color(0xff607d8b))),
+          GestureDetector(
+            onTap: () {
+              IncreseCount();
+            },
+            child: Container(
+              height: 150, width: 300, //color: Colors.yellow,
+              //padding: EdgeInsets.only(top: 20.0,right: 120),
+              //margin: EdgeInsets.only(top: 150.0,right: 70.0),
+              //margin: EdgeInsets.only(bottom: 40.0),
+                child: Ink.image(
+                  image: AssetImage("assests/images/home-pattern1.png"),
+                  fit: BoxFit.cover,
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Text("سبحان الله",
+                          style:
+                          TextStyle(fontSize: 25, color: Color(0xff607d8b))),
+                    ),
                   ),
                 ),
-              ),
             ),
           ),
           Container(
@@ -79,21 +79,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Container(
-            height: 150, width: 300, //color: Colors.red,
-            //margin: EdgeInsets.only(left: 100.0,right: 100.0,top: 50.0),
-            //margin: EdgeInsets.only(bottom: 5.0),
-            child: GestureDetector(
-              onTap: () {
-                DecreseCount();
-              },
-              child: Ink.image(
-                image: AssetImage("assests/images/home-pattern1.png"),
-                fit: BoxFit.cover,
-                child: Center(
-                    child: Image.asset('assests/images/reset-icon.png',
-                        width: 25, height: 25)),
-              ),
+          GestureDetector(
+            onTap: () {
+              DecreseCount();
+            },
+            child: Container(
+              height: 150, width: 300, //color: Colors.red,
+              //margin: EdgeInsets.only(left: 100.0,right: 100.0,top: 50.0),
+              //margin: EdgeInsets.only(bottom: 5.0),
+                child: Ink.image(
+                  image: AssetImage("assests/images/home-pattern1.png"),
+                  fit: BoxFit.cover,
+                  child: Center(
+                      child: Image.asset('assests/images/reset-icon.png',
+                          width: 25, height: 25)),
+                ),
             ),
           ),
         ]),

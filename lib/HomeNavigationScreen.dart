@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_point_tab_bar/pointTabIndicator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sabha/AdanTimesScreen.dart';
 import 'package:sabha/ChooseAzakrScreen.dart';
 import 'package:sabha/HomeScreen.dart';
@@ -16,7 +17,7 @@ class HomeNavigationScreen extends StatefulWidget {
 
 class _HomeNavigationScreenState extends State<HomeNavigationScreen>
     with SingleTickerProviderStateMixin {
-  final TabList = ["السبحة الإلكترونية", "حصن المسلم"];
+  final TabList = ["السبحة", "أذكار المسلم"];
   final intialTab = [HomeScreen()];
   var tablistt;
 
@@ -74,7 +75,7 @@ class _HomeNavigationScreenState extends State<HomeNavigationScreen>
 
         bottom: TabBar(
           labelColor: colorFontAllApp,
-          labelStyle: TextStyle(fontSize: fontLable),
+          labelStyle:GoogleFonts.amiri(textStyle: TextStyle(fontSize: fontLable)),
           controller: _tabController,
           indicator: PointTabIndicator(
             position: PointTabIndicatorPosition.bottom,

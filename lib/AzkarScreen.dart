@@ -29,15 +29,21 @@ class _AzkarScreenState extends State<AzkarScreen>
   _AzkarScreenState(this.zekr, this.repeat);*/
 
   var responsebody;
+  var url;
   getAzkarSabah() async
   {
     List <AzkarModel> listAzkarSabah=[];
-    /*if ({widget.azkar} == 'azkar_5rog')
+    /*if ({widget.azkar} == '10')
       {
-        var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
+         url = Uri.parse("http://www.hisnmuslim.com/api/ar/${widget.azkar}.json");
 
-      }else{
-      var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
+      }
+     else if ({widget.azkar} == '11')
+      {
+        url = Uri.parse("http://www.hisnmuslim.com/api/ar/${widget.azkar}.json");
+      }
+    else{
+       url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
 
     }*/
     var url = Uri.parse("https://ahegazy.github.io/muslimKit/json/${widget.azkar}.json");
@@ -49,7 +55,9 @@ class _AzkarScreenState extends State<AzkarScreen>
     responsebody = jsonDecode(response.body)["content"];
     // responsebody = jsonDecode(response.body)["date"]["readable"];
     for(var i in responsebody){
-      listAzkarSabah.add(AzkarModel(repeat:i["repeat"],zekr:i["zekr"] ));
+      listAzkarSabah.add(AzkarModel(
+          repeat:i["repeat"],
+          zekr:i["zekr"] ));
     }
     //print(response.statusCode);
     //print(responsebody);
@@ -98,16 +106,17 @@ class _AzkarScreenState extends State<AzkarScreen>
       body: FutureBuilder(
         future: getAzkarSabah(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+
           return (snapshot.hasData)
               ? Container(
             margin: EdgeInsets.all(20.0),
-            child: ListView.builder(itemBuilder: (BuildContext context, int index) {
+            child: ListView.builder(
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index) {
 
-              return Stack(
-                children: [
-                  ItemCard("${snapshot.data[index].zekr}", snapshot.data[index].repeat),
-                  //ItemCard("${snapshot.data[2]["zekr"]}", snapshot.data[2]["repeat"])
-                ],
+              return Container( child: ItemCard("${snapshot.data[index].zekr}", snapshot.data[index].repeat),
+
+
 
               );
             },
