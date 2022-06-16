@@ -8,8 +8,6 @@ import 'package:http/http.dart' as http;
 import 'constract.dart';
 
 class AdanTimesScreen extends StatefulWidget {
-
-
   @override
   State<AdanTimesScreen> createState() => _AdanTimesScreenState();
 }
@@ -44,51 +42,50 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          constraints: BoxConstraints.expand(),
-          decoration:  BoxDecoration(
-              image:DecorationImage(
-
-                image: AssetImage("assests/images/adanbackground2.jpg"),
-                fit: BoxFit.cover,
-              ) ),
-          child: FutureBuilder(
-            future: getTimes(),
-            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-              return (snapshot.hasData)
-                  ? Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                //mainAxisAlignment: MainAxisAlignment.center,
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage("assests/images/adanbackground2.jpg"),
+        fit: BoxFit.cover,
+      )),
+      child: FutureBuilder(
+        future: getTimes(),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          return (snapshot.hasData)
+              ? Column(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0,),
-                      child: Row(
-                        //mainAxisAlignment: MainAxisAlignment.center,
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          IconButton(onPressed: ()
-                          {
-                            Navigator.pop(context);
-                          },
-                              icon: Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Icon(
-                                    Icons.clear,
-                                    color: colorFontAllApp,
-                                    size: 30),
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 80.0,top: 50),
-                            child: Text(
-                              "${snapshot.data["data"]["date"]["readable"]}",
-                              style: GoogleFonts.amiri(
-                                textStyle: TextStyle(
-                                    color: colorFontAllApp,
-                                    fontSize: fontTitle,
-                                    fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 15.0,
+                        ),
+                        child: Row(
+                          //mainAxisAlignment: MainAxisAlignment.center,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Icon(Icons.clear,
+                                      color: colorFontAllApp, size: 30),
+                                )),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 80.0, top: 50),
+                              child: Text(
+                                "${snapshot.data["data"]["date"]["readable"]}",
+                                style: GoogleFonts.amiri(
+                                  textStyle: TextStyle(
+                                      color: colorFontAllApp,
+                                      fontSize: fontTitle,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
-                          ),
 /*                          Padding(
                               padding:
                                   const EdgeInsets.only(top: 30.0, right: 60),
@@ -145,10 +142,116 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
                                   style: TextStyle(
                                       fontSize: fontAdanTime,
                                       color: colorFontAllApp))),*/
+                          ],
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Fajr"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "الفجر",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Sunrise"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "الشروق",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Dhuhr"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "الضهر",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Asr"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "العصر",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Maghrib"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "المغرب",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                  "${snapshot.data["data"]["timings"]["Isha"]}",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+                              Text(
+                                  "العشاء",
+                                  style: TextStyle(
+                                      fontSize: fontAdanTime,
+                                      color: colorFontAllApp)),
+
+
+                            ],
+                          ),
                         ],
                       ),
-                    ),
-                    /* Center(
+                      /* Center(
                     child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -169,6 +272,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
                       ],
                     ),
                   ),*/
+/*
                     RichText(
                       text: TextSpan(
                         text: '${snapshot.data["data"]["timings"]["Fajr"]}',
@@ -271,8 +375,9 @@ crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                         ],
                       ),
-                    ),
-                    /*             Text(
+                    ),*/
+
+                      /*             Text(
                       "${snapshot.data["data"]["timings"]["Fajr"]}",
                       style: TextStyle(fontSize: fontAdanTime, color: colorFontAllApp)),
                   Text("الفجر",
@@ -304,15 +409,13 @@ crossAxisAlignment: CrossAxisAlignment.start,
                     ),
                   ),
 */
-                  ])
-                  : Center(child: CircularProgressIndicator(color: colorFontAllApp,));
-            },
-          ),
-
-
-        )
-    );
-
-
+                    ])
+              : Center(
+                  child: CircularProgressIndicator(
+                  color: colorFontAllApp,
+                ));
+        },
+      ),
+    ));
   }
 }

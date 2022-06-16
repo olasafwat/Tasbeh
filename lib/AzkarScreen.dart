@@ -114,16 +114,12 @@ class _AzkarScreenState extends State<AzkarScreen>
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
 
-              return Container( child: ItemCard("${snapshot.data[index].zekr}", snapshot.data[index].repeat),
-
+              return Container(
+                child: ItemCard("${snapshot.data[index].zekr}", snapshot.data[index].repeat),
 
 
               );
             },
-
-
-
-
             ),
           )
               : Center(child: CircularProgressIndicator(color: colorFontAllApp));
