@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'constract.dart';
+import '../constract.dart';
+import '../constract.dart';
 
 class ItemCard extends StatefulWidget {
   String ItemText;

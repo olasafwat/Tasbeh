@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
-import 'constract.dart';
+import '../Controller/Api.dart';
+import '../constract.dart';
+
 
 class AdanTimesScreen extends StatefulWidget {
   @override
@@ -13,28 +15,11 @@ class AdanTimesScreen extends StatefulWidget {
 }
 
 class _AdanTimesScreenState extends State<AdanTimesScreen> {
-  var responsebody;
 
-  getTimes() async {
-    var url = Uri.parse(
-        "https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=5");
-
-    // response -> hygeb al data mn al net
-    var response = await http.get(url);
-
-    setState(() {
-      responsebody = jsonDecode(response.body);
-      // responsebody = jsonDecode(response.body)["date"]["readable"];
-    });
-    //print(response.statusCode);
-    //print(responsebody);
-
-    return responsebody;
-  }
 
   @override
   void initState() {
-    getTimes();
+    Api.getTimes();
     super.initState();
   }
 
@@ -49,7 +34,7 @@ class _AdanTimesScreenState extends State<AdanTimesScreen> {
         fit: BoxFit.cover,
       )),
       child: FutureBuilder(
-        future: getTimes(),
+        future: Api.getTimes(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return (snapshot.hasData)
               ? Column(

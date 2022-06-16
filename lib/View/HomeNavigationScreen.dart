@@ -3,12 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_point_tab_bar/pointTabIndicator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sabha/AdanTimesScreen.dart';
-import 'package:sabha/ChooseAzakrScreen.dart';
-import 'package:sabha/HomeScreen.dart';
-import 'package:sabha/InfoScreen.dart';
 
-import 'constract.dart';
+
+import 'AdanTimesScreen.dart';
+import 'ChooseAzakrScreen.dart';
+import 'HomeScreen.dart';
+import 'InfoScreen.dart';
+import '../constract.dart';
 
 class HomeNavigationScreen extends StatefulWidget {
   @override

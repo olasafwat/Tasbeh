@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sabha/HomeNavigationScreen.dart';
 
-import 'constract.dart';
+import '../constract.dart';
+
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({Key? key}) : super(key: key);

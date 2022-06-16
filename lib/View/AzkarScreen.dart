@@ -2,10 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sabha/ItemCard.dart';
+import 'package:sabha/View/ItemCard.dart';
 import 'package:http/http.dart' as http;
-import 'AzkarModel.dart';
-import 'constract.dart';
+
+import '../Model/AzkarModel.dart';
+import '../constract.dart';
 
 class AzkarScreen extends StatefulWidget
 {

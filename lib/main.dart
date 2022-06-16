@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'AzkarScreen.dart';
-import 'ChooseAzakrScreen.dart';
-import 'HomeNavigationScreen.dart';
-import 'HomeScreen.dart';
+
+import 'View/HomeNavigationScreen.dart';
+
 
 void main() {
   runApp(const MyApp());

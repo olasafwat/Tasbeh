@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'AzkarScreen.dart';
-import 'constract.dart';
+import '../constract.dart';
 
 class ChooseAzkarScreen extends StatefulWidget {
   const ChooseAzkarScreen({Key? key}) : super(key: key);
